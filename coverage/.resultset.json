@@ -95,13 +95,13 @@
         1,
         1,
         null,
+        1,
+        null,
+        1,
         null,
         null,
         null,
-        null,
-        null,
-        null,
-        null,
+        1,
         null
       ],
       "/Users/jordan/Documents/Makers/GroupTasks/acebook-steam/app/mailers/application_mailer.rb": [
@@ -164,6 +164,6 @@
         0
       ]
     },
-    "timestamp": 1558620425
+    "timestamp": 1558621979
   }
 }
