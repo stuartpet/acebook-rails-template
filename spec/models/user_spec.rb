@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  let(:user) { User.new(name: "Test", email: "test@test.com", password_digest: "1234")}
+  let(:user) { User.new(name: "Test", email: "test@test.com", password: "1234")}
   describe "name" do
     it "checks if the name is present" do
       expect(user.name).to eq("Test")
