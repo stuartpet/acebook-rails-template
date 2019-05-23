@@ -30,7 +30,7 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-group :test, :deployment do
+group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution &get a debugger console
 
   gem "bcrypt", "~> 3.1"

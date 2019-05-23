@@ -8,7 +8,8 @@ RSpec.describe User, type: :model do
     end
 
     it "checks that the user has given a valid name" do
-      expect(User.create(name: "", email: "test@test.com", password: "1234").valid?).to be(false)
+      user = User.create(name: "", email: "test@test.com", password: "1234")
+      expect(user.valid?).to be(false)
     end
 
     it "checks the length of the name is valid" do
