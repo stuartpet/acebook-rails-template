@@ -11,7 +11,6 @@ before_install:
 - gem install bundler
 
 before_script:
-  - bundle exec rails db:drop RAILS_ENV=test
  - bundle exec rails db:create RAILS_ENV=test
  - bundle exec rails db:migrate RAILS_ENV=test
  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
