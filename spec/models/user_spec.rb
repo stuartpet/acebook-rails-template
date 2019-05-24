@@ -8,6 +8,11 @@ RSpec.describe User, type: :model do
     end
 
     it "checks that the user has given a valid name" do
+      user = User.new(name: "", email: "test@test.com", password: "1234")
+      p user
+      p user.save
+      p user
+      p user.attributes
       expect(User.create(name: "", email: "test@test.com", password: "1234").valid?).to be(false)
     end
 
