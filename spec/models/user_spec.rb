@@ -36,17 +36,17 @@ RSpec.describe User, type: :model do
     end
   end
 
-  describe "password" do
-    it "checks if the password is present" do
-      expect(user.password).to eq("1234")
-    end
+  # describe "password" do
+  #   it "checks if the password is present" do
+  #     expect(user.password).to eq("1234")
+  #   end
+  #
+  #   it "checks that the user has entered a password" do
+  #     expect(User.create(name: "Test", email: "test@test.com", password: "").valid?).to be(false)
+  #   end
 
-    it "checks that the user has entered a password" do
-      expect(User.create(name: "Test", email: "test@test.com", password: "").valid?).to be(false)
-    end
-
-    it "checks that the password is a valid length" do
-      expect(User.create(name: "Test", email: "test@test.com", password: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa").valid?).to be(false)
-    end
-  end
+    # it "checks that the password is a valid length" do
+    #   expect(User.create(name: "Test", email: "test@test.com", password: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa").valid?).to be(false)
+    # end
+  # end
 end
