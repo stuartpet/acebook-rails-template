@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class PostsController < ApplicationController
+
   # GET request
   def new
     @post = Post.new
@@ -8,7 +9,8 @@ class PostsController < ApplicationController
 
   # POST request
   def create
-    @post = Post.create(post_params)
+    user = User.find(session[:user_id])
+    @post = user.posts.create([post_params])
     redirect_to posts_url
   end
 

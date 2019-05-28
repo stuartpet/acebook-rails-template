@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
 require 'rails_helper'
+require 'web_helper'
 
 RSpec.feature 'Updating Posts', type: :feature do
   scenario 'user can edit posts' do
-    visit '/posts'
-    click_link 'New post'
+    signup_login
     fill_in 'Message', with: 'Hello, world!'
     click_button 'Submit'
     click_button 'Edit', match: :first

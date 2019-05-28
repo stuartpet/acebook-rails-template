@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class UsersController < ApplicationController
+
   def new
     @user = User.new
   end
@@ -13,7 +14,7 @@ class UsersController < ApplicationController
     @user = User.create(user_params)
     if @user.save
       redirect_to login_path
-    else  
+    else
       render 'new'
     end
   end

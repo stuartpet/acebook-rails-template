@@ -7,8 +7,7 @@ require 'rails_helper'
 
 RSpec.feature 'Timeline', type: :feature do
   scenario 'posts appear with newest post first' do
-    visit '/posts'
-    click_link 'New post'
+    signup_login
     fill_in 'Message', with: 'Hello!'
     click_button 'Submit'
     click_link 'New post'
