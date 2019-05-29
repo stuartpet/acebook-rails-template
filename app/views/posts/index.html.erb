@@ -149,6 +149,16 @@
       <%= button_to "Delete this Post", { action: 'destroy', id: post.id },
                     method: :delete, data: { confirm: "Are you sure?"} %>
     <% end %>
+    <% if post.comments %>
+    <% post.comments.each do |comment| %>
+        <%= comment.user.email %>
+        <%= comment.content %>
+    <% end %>
+    <%= form_for [post, post.comments.new] do |f| %>
+    <%= f.text_field :content, placeholder: 'Add a comment...' %>
+    <%= f.submit 'Add' %>
+    <% end %>
+    <% end %>
   </div><br>
 <% end %>
 
