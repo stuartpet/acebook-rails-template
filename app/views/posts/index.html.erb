@@ -154,7 +154,7 @@
         <%= comment.user.email %>
         <%= comment.content %>
         <% if comment.user == current_user %>
-            <%= link_to "Delete", post_comment_path(post, comment), method: :delete, data: { confirm: "Are you sure?" } %>
+            <%= button_to "Delete Comment", post_comment_path(post, comment), method: :delete, data: { confirm: "Are you sure?" } %>
         <% end %>
     <% end %>
     <%= form_for [post, post.comments.new] do |f| %>
