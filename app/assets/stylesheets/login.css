@@ -1,1 +1,118 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
 
+ {
+  font-family: 'Raleway', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-image: url('https://source.unsplash.com/1600x900/?people');
+  background-position: center center;
+	background-size: cover;
+}
+
+.container {
+  height: 80vh;
+  width: 80vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.content-container {
+  min-height: 100%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.left {
+  background: linear-gradient(rgba(59, 89, 152, 0.9), rgba(59, 89, 152, 0.9)), url('https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80') no-repeat;
+	background-position: center center;
+	background-size: cover;
+  color: white;
+  border-radius: 30px 0 0 30px;
+}
+
+.right {
+  background: white;
+  border-radius: 0 30px 30px 0;
+}
+
+.right .title {
+  color: #3b5998;
+}
+
+.title {
+  font-family: freight sans !important;
+  font-size: 75px;
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.intro {
+  font-weight: 500;
+  font-size: 1.3rem;
+  margin: 20%;
+  text-align: center;
+  /* font-family: ; */
+}
+input {
+  border: none;
+  border-bottom: 2px solid #3b5998;
+  font-size: 1.12rem;
+}
+
+
+/* .middle input{
+  width: 100%;
+} */
+/* .bottom {
+  display: flex;
+  justify-content: center;
+} */
+.top input {
+  width: calc(50% - 50px);
+  margin: 10px;
+}
+/* .bottom select{
+  border: none;
+  border-bottom: 2px solid #3b5998;
+  margin: 10px;
+  font-size: 1.12rem;
+} */
+/* .big-btn {
+  font-family: freight sans;
+  text-decoration: none;
+  text-align: center;
+  font-size: 1.5rem;
+  color: #3b5998;
+  position: relative;
+  margin: 10px auto;
+} */
+
+/* .big-btn i  {
+  position: absolute;
+  top: 50%;
+  right: -25px;
+  transform: translateY(-50%);
+} */
+
+/* .form-container {
+  width: 60%;
+} */
+
+.button-container a {
+  color: white;
+  font-size: 1.1rem;
+  margin: 25px;
+  text-decoration: none;
+}

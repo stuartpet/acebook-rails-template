@@ -11,10 +11,9 @@
     <div class="Cnt_Layout">
       <header class="Menu">
         <ul class="list_item">
-          <li class="item left"><i class="fab fa-facebook"></i></li>
-            <i class="fab fa-facebook-messenger"></i>
-            <span class="circle_notify"></span>
-          </li>
+          <li class="item left"><i class="Acebook"></i></li>
+
+
           <li class="item middle">
             <%= form_with url: search_path, method: :get, local: true, class: 'form-inline search-form' do |form| %>
               <%= form.text_field :query, value: params[:query], class: 'form-control mr-sm-2', placeholder: '#search' %>
@@ -31,27 +30,24 @@
         </ul>
       </header>
       <div class="Containers">
-        <div class="Container Left">
-          <ul class="Sections Menu">
-            Menu
-          </ul>
         </div>
+        <center>
         <div class="Container Middle">
           <div class="Sections Stories">
             <h1 class="title">Friends</h1>
             <ul class="Body">
-              <li class="img_avatar perfil_session" style="background-image: url(http://themes.themewaves.com/nuzi/wp-content/uploads/sites/4/2013/05/Team-Member-3.jpg);">
+              <li class="img_avatar perfil_session" style="background-image: url('/assets/images/mark.png');">
                 <span class="img_border">
                   <button class="btn_open_sect">
                     <i class="fa fa-plus"></i>
                   </button>
                 </span>
               </li>
-              <li class="img_avatar" style="background-image: url('/assets/henry.jpg')"><span class="img_border"></span></li>
-              <li class="img_avatar" style="background-image:url('/assets/gui.jpg')"><span class="img_border"></span></li>
-              <li class="img_avatar" style="background-image:url('/assets/Kiah.png')"><span class="img_border"></span></li>
-              <li class="img_avatar" style="background-image:url('/assets/Jordan.png')"><span class="img_border"></span></li>
-              <li class="img_avatar" style="background-image:url('/assets/sarp.png')"><span class="img_border"></span></li>
+              <li class="img_avatar" style="background-image: url('/assets/images/henry.jpg')"><span class="img_border"></span></li>
+              <li class="img_avatar" style="background-image:url('/assets/images/gui.jpg')"><span class="img_border"></span></li>
+              <li class="img_avatar" style="background-image:url('/assets/images/Kiah.png')"><span class="img_border"></span></li>
+              <li class="img_avatar" style="background-image:url('/assets/images/Jordan.png')"><span class="img_border"></span></li>
+              <li class="img_avatar" style="background-image:url('/assets/images/sarp.png')"><span class="img_border"></span></li>
             </ul>
           </div>
           <div class="Sections New_Post">
@@ -60,7 +56,7 @@
                 <div class="cnt_new_written">
                   <form action="/posts" method="post">
 
-                  <div class="img_avatar post" style="background-image: url('/assets/stu.jpg');"></div>
+                  <div class="img_avatar post" style="background-image: url('/assets/images/mark.png');"></div>
                   <%= form_with model: @post do |form| %>
                     <%= form.text_area :message, class: :txt_post, id: 'Message', placeholder: "Whats on your mind?"%><br><br>
 
@@ -124,13 +120,7 @@
             <div class="Feed_Body"></div>
           </div>
         </div>
-        <div class="Container Right">
-          <div class="Sections Chat">
-            Chat
-          </div>
         </div>
-      </div>
-    </div>
   </body>
 </html>
 
