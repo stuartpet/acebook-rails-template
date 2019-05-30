@@ -22,8 +22,12 @@ class CommentsController < ApplicationController
   def update
     @post = Post.find(params[:post_id])
     @comment = @post.comments.find(params[:id])
-    @comment.update(comment_params)
-    flash[:success] = "Comment updated"
+    if Time.now - @comment.created_at > 1.minutes
+      flash[:alert] = "Too late to edit"
+    else
+      @comment.update(comment_params)
+      flash[:success] = "Comment updated"
+    end
     redirect_to root_path
   end
 
