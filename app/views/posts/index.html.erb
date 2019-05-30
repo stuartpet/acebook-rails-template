@@ -155,7 +155,13 @@
         <%= comment.content %>
         <% if comment.user == current_user %>
             <%= button_to "Delete Comment", post_comment_path(post, comment), method: :delete, data: { confirm: "Are you sure?" } %>
-            <%= button_to "Edit Comment", edit_post_comment_path(post, comment), method: :get %>
+            <% if Time.now - comment.created_at > 1.minutes %>
+              <% if flash[:alert] %>
+                <%= flash[:alert] %>
+              <% end %>
+            <% else %>
+              <%= button_to "Edit Comment", edit_post_comment_path(post, comment), method: :get %>
+            <% end %>
         <% end %>
     <% end %>
     <%= form_for [post, post.comments.new] do |f| %>
