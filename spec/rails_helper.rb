@@ -9,12 +9,6 @@ require 'spec_helper'
 require 'rspec/rails'
 # Add additional requires below this line. Rails is not loaded until this point!
 
-from selenium import webdriver
-from selenium.webdriver.firefox.options import Options
-
-options = Options()
-options.headless = True
-driver = webdriver.Firefox(options=options)
 
 Capybara.register_driver :selenium_marionette do |app|
  Capybara::Selenium::Driver.new(app, browser: :firefox, marionette: true)
