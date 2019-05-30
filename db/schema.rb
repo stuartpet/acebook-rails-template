@@ -12,16 +12,40 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20_190_528_104_715) do
+=======
+ActiveRecord::Schema.define(version: 20190529145330) do
+
+>>>>>>> b354fbdf2589da068a3dca4c88ee7c3da6bb384c
   # These are extensions that must be enabled in order to support this database
   enable_extension 'plpgsql'
 
+<<<<<<< HEAD
   create_table 'posts', force: :cascade do |t|
     t.string 'message'
     t.datetime 'created_at', null: false
     t.datetime 'updated_at', null: false
     t.bigint 'user_id'
     t.index ['user_id'], name: 'index_posts_on_user_id'
+=======
+  create_table "comments", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "post_id"
+    t.text "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_comments_on_post_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
+  create_table "posts", force: :cascade do |t|
+    t.string "message"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_posts_on_user_id"
+>>>>>>> b354fbdf2589da068a3dca4c88ee7c3da6bb384c
   end
 
   create_table 'users', force: :cascade do |t|
@@ -38,5 +62,11 @@ ActiveRecord::Schema.define(version: 20_190_528_104_715) do
     t.index ['reset_password_token'], name: 'index_users_on_reset_password_token', unique: true
   end
 
+<<<<<<< HEAD
   add_foreign_key 'posts', 'users'
+=======
+  add_foreign_key "comments", "posts"
+  add_foreign_key "comments", "users"
+  add_foreign_key "posts", "users"
+>>>>>>> b354fbdf2589da068a3dca4c88ee7c3da6bb384c
 end

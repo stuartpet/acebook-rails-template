@@ -128,8 +128,8 @@
 
 <center>
 <% @posts.each do |post| %>
-  <div>
-    <p><%= h(post.message).gsub(/\n/, '<br/>').html_safe %></p>
+  <div class="shadow">
+    <h2><%= h(post.message).gsub(/\n/, '<br/>').html_safe %></h2>
     <p><%= post.created_at.strftime("Created on %d/%m/%Y - %H:%M")%></p>
     <% if post.user_id == current_user.id %>
       <%= button_to "Edit", { action: 'edit', id: post.id },
@@ -138,6 +138,20 @@
 
       <%= button_to "Delete this Post", { action: 'destroy', id: post.id },
                     method: :delete, data: { confirm: "Are you sure?"} %>
+    <% end %>
+    <% if post.comments %>
+    <% post.comments.each do |comment| %>
+        <%= comment.user.email %>
+        <%= comment.content %>
+        <% if comment.user == current_user %>
+            <%= button_to "Delete Comment", post_comment_path(post, comment), method: :delete, data: { confirm: "Are you sure?" } %>
+            <%= button_to "Edit Comment", edit_post_comment_path(post, comment), method: :get %>
+        <% end %>
+    <% end %>
+    <%= form_for [post, post.comments.new] do |f| %>
+    <%= f.text_field :content, placeholder: 'Add a comment...' %>
+    <%= f.submit 'Add' %>
+    <% end %>
     <% end %>
   </div><br>
 <% end %>
