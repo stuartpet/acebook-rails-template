@@ -5,7 +5,7 @@ require 'web_helper'
 # let!(:first_post) { Factory(:post) }
 # let!(:second_post) { Factory(:post) }
 
-RSpec.feature 'Timeline', js: true, type: :feature do
+RSpec.feature 'Timeline', type: :feature do
   scenario 'posts appear with newest post first' do
     create_new_user
     visit '/posts'
