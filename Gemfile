@@ -9,6 +9,8 @@ end
 
 gem 'devise'
 
+gem 'geckodriver-helper'
+
 gem 'bootstrap-sass'
 
 gem 'simple_form'
