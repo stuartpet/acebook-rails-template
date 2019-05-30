@@ -87,7 +87,7 @@ Rails.application.configure do
   config.log_formatter = ::Logger::Formatter.new
 
   # devise
-  config.action_mailer.default_url_options = { :host => 'steam-acebook.herokuapp.com' }
+  config.action_mailer.default_url_options = { host: 'steam-acebook.herokuapp.com' }
   # Use a different logger for distributed setups.
   # require 'syslog/logger'
   # config.logger =

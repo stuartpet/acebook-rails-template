@@ -3,9 +3,7 @@
 require 'rails_helper'
 
 RSpec.describe PostsController, type: :controller do
-
-
-  let (:user) { User.create(name: "test", email: "test@test.com", password: "1234") }
+  let (:user) { User.create(name: 'test', email: 'test@test.com', password: '1234') }
 
   describe 'GET /new ' do
     it 'responds with 302' do

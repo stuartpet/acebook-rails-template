@@ -3,16 +3,16 @@ html, body {
   padding: 0;
 }
 
- {
-  font-family: 'Raleway', sans-serif;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  background-image: url('https://source.unsplash.com/1600x900/?people');
-  background-position: center center;
-	background-size: cover;
-}
+/* //  body {
+//   font-family: 'Raleway', sans-serif;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   min-height: 100vh;
+//   background-image: url('https://source.unsplash.com/1600x900/?people');
+//   background-position: center center;
+// 	background-size: cover;
+// } */
 
 .container {
   height: 80vh;
@@ -63,8 +63,9 @@ html, body {
   font-size: 1.3rem;
   margin: 20%;
   text-align: center;
-  /* font-family: ; */
+
 }
+
 input {
   border: none;
   border-bottom: 2px solid #3b5998;
@@ -72,43 +73,11 @@ input {
 }
 
 
-/* .middle input{
-  width: 100%;
-} */
-/* .bottom {
-  display: flex;
-  justify-content: center;
-} */
 .top input {
   width: calc(50% - 50px);
   margin: 10px;
 }
-/* .bottom select{
-  border: none;
-  border-bottom: 2px solid #3b5998;
-  margin: 10px;
-  font-size: 1.12rem;
-} */
-/* .big-btn {
-  font-family: freight sans;
-  text-decoration: none;
-  text-align: center;
-  font-size: 1.5rem;
-  color: #3b5998;
-  position: relative;
-  margin: 10px auto;
-} */
 
-/* .big-btn i  {
-  position: absolute;
-  top: 50%;
-  right: -25px;
-  transform: translateY(-50%);
-} */
-
-/* .form-container {
-  width: 60%;
-} */
 
 .button-container a {
   color: white;

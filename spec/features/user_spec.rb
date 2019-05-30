@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-feature 'Users can sign up' do
+feature 'Users can sign up', js: true, type: :feature do
   scenario 'user signs up for new account' do
     visit '/users/sign_up'
     fill_in 'user_email', with: 'example@example.com'
@@ -14,7 +14,7 @@ feature 'Users can sign up' do
   end
 end
 
-feature 'Users can log in' do
+feature 'Users can log in', js: true, type: :feature do
   scenario 'user who has not signed up yet cannot log in' do
     visit new_user_session_path
     fill_in 'user_email', with: 'example@example.com'
