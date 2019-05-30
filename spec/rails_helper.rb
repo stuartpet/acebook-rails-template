@@ -7,18 +7,18 @@ require File.expand_path('../config/environment', __dir__)
 abort('Rails environment is running in prod mode!') if Rails.env.production?
 require 'spec_helper'
 require 'rspec/rails'
+require 'capybara'
 # Add additional requires below this line. Rails is not loaded until this point!
 
 
-Capybara.register_driver :selenium do |app|
 
-  custom_profile = Selenium::WebDriver::Firefox::Profile.new
+Capybara.register_driver :chrome do |app|
+	options = Selenium::WebDriver::Chrome::Options.new(args: %w[no-sandbox headless disable-gpu])
 
-  # Turn off the super annoying popup!
-  custom_profile["network.http.prompt-temp-redirect"] = false
-
-  Capybara::Selenium::Driver.new(app, :browser => :firefox, :profile => custom_profile)
+	Capybara::Selenium::Driver.new(app, browser: :chrome, options: options)
 end
+
+Capybara.javascript_driver = :chrome
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
