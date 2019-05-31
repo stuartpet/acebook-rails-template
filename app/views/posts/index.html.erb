@@ -130,11 +130,11 @@
     <p><%= post.created_at.strftime("Created on %d/%m/%Y - %H:%M")%></p>
     <% if post.user_id == current_user.id %>
       <%= button_to "Edit", { action: 'edit', id: post.id },
-                    method: :get %>
+                  method: :get, class: :stu  %>
       <%# button that routes to posts#id with a destroy action %>
 
       <%= button_to "Delete this Post", { action: 'destroy', id: post.id },
-                    method: :delete, data: { confirm: "Are you sure?"} %>
+                    method: :delete, data: { confirm: "Are you sure?"}, class: :stu %>
     <% end %>
     <% if post.comments %>
     <% post.comments.each do |comment| %>
@@ -144,14 +144,14 @@
             <%= button_to "Delete Comment", post_comment_path(post, comment), method: :delete, data: { confirm: "Are you sure?" } %>
             <% if Time.now - comment.created_at > 1.minutes%>
               <%= button_to "Edit Comment", post_comments_url(post, comment), method: :get, data: { disable_with: "Too late to edit"} %>
-              <%else%> 
+              <%else%>
               <%= button_to "Edit Comment", edit_post_comment_path(post, comment), method: :get %>
             <%end%>
         <% end %>
     <% end %>
     <%= form_for [post, post.comments.new] do |f| %>
     <%= f.text_field :content, placeholder: 'Add a comment...' %>
-    <%= f.submit 'Add' %>
+    <%= f.submit 'Add', class: :stu %>
     <% end %>
     <% end %>
   </div><br>
