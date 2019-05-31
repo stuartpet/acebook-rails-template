@@ -3,16 +3,18 @@
 class CommentsController < ApplicationController
   before_action :set_post
 
+  def index
+  end
   def create
     @comment = @post.comments.build(comment_params)
     @comment.user_id = current_user.id
 
     if @comment.save
-      flash[:success] = 'Comment added'
-      redirect_back(fallback_location: root_path)
+      flash[:success] = "Comment added"
+      redirect_back(fallback_location: posts_path)
     else
-      flash[:alert] = 'Something went wrong!'
-      render root_path
+      flash[:alert] = "Something went wrong!"
+      render posts_path
     end
   end
 
@@ -24,17 +26,21 @@ class CommentsController < ApplicationController
   def update
     @post = Post.find(params[:post_id])
     @comment = @post.comments.find(params[:id])
-    @comment.update(comment_params)
-    flash[:success] = 'Comment updated'
-    redirect_to root_path
+    if Time.now - @comment.created_at > 1.minutes
+      flash[:notice] = 'Too late to edit'
+    else
+      @comment.update(comment_params)
+      flash[:success] = "Comment updated"
+      redirect_to  posts_path
+    end
   end
 
   def destroy
     @comment = @post.comments.find(params[:id])
 
     @comment.destroy
-    flash[:success] = 'Comment deleted'
-    redirect_to root_path
+    flash[:success] = "Comment deleted"
+    redirect_to  posts_path
   end
 
   private
