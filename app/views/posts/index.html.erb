@@ -23,10 +23,7 @@
               <i class="fa fa-search"></i>
             </div> -->
           </li>
-          <%= link_to "Logout", destroy_user_session_path, method: :delete %>
-          <li class="item right"><i class="fa fa-bell"></i></li>
-          <li class="item right"><i class="fas fa-comments"></i></li>
-          <li class="item right"><i class="fa fa-user-friends"></i></li>
+          <%= link_to "Logout", destroy_user_session_path, class: "logout-profile", method: :delete %>
         </ul>
       </header>
       <div class="Containers">
