@@ -1,7 +1,7 @@
 require 'rails_helper'
 require 'web_helper'
 
-RSpec.feature 'Users can comment on a post',js: true, type: :feature do
+feature 'Users can comment on a post' do
   scenario 'user has the option to comment on a post' do
     create_new_user
     visit '/posts'

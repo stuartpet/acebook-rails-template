@@ -14,7 +14,7 @@ class CommentsController < ApplicationController
       redirect_back(fallback_location: root_path)
     else
       flash[:alert] = "Something went wrong!"
-      render root_path
+      render post_path
     end
   end
 
@@ -32,7 +32,7 @@ class CommentsController < ApplicationController
     else
       @comment.update(comment_params)
       flash[:success] = "Comment updated"
-      redirect_to root_path
+      redirect_to posts_path
     end
   end
 
@@ -41,7 +41,7 @@ class CommentsController < ApplicationController
 
     @comment.destroy
     flash[:success] = "Comment deleted"
-    redirect_to root_path
+    redirect_to posts_path
   end
 
   private
