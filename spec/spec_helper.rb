@@ -107,4 +107,5 @@ RSpec.configure do |config|
   #   # by passing the same `--seed` value
   #   # as the one that triggered the failure.
   #   Kernel.srand config.seed
+
 end
