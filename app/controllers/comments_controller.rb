@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CommentsController < ApplicationController
   before_action :set_post
 
@@ -6,10 +8,10 @@ class CommentsController < ApplicationController
     @comment.user_id = current_user.id
 
     if @comment.save
-      flash[:success] = "Comment added"
+      flash[:success] = 'Comment added'
       redirect_back(fallback_location: root_path)
     else
-      flash[:alert] = "Something went wrong!"
+      flash[:alert] = 'Something went wrong!'
       render root_path
     end
   end
@@ -23,7 +25,7 @@ class CommentsController < ApplicationController
     @post = Post.find(params[:post_id])
     @comment = @post.comments.find(params[:id])
     @comment.update(comment_params)
-    flash[:success] = "Comment updated"
+    flash[:success] = 'Comment updated'
     redirect_to root_path
   end
 
@@ -31,7 +33,7 @@ class CommentsController < ApplicationController
     @comment = @post.comments.find(params[:id])
 
     @comment.destroy
-    flash[:success] = "Comment deleted"
+    flash[:success] = 'Comment deleted'
     redirect_to root_path
   end
 

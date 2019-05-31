@@ -5,5 +5,5 @@ def create_new_user
   fill_in 'user[email]', with: 'example@example.com'
   fill_in 'user[password]', with: 'examplepassword'
   fill_in 'user[password_confirmation]', with: 'examplepassword'
-  click_link_or_button ("Sign up")
+  click_link_or_button 'Sign up'
 end

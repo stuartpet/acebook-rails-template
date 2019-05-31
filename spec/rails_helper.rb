@@ -9,15 +9,13 @@ require 'spec_helper'
 require 'rspec/rails'
 # Add additional requires below this line. Rails is not loaded until this point!
 
-
 Capybara.register_driver :selenium do |app|
-
   custom_profile = Selenium::WebDriver::Firefox::Profile.new
 
   # Turn off the super annoying popup!
-  custom_profile["network.http.prompt-temp-redirect"] = false
+  custom_profile['network.http.prompt-temp-redirect'] = false
 
-  Capybara::Selenium::Driver.new(app, :browser => :firefox, :profile => custom_profile)
+  Capybara::Selenium::Driver.new(app, browser: :firefox, profile: custom_profile)
 end
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
