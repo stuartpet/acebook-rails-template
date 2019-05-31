@@ -1,6 +1,10 @@
 class CommentsController < ApplicationController
   before_action :set_post
 
+
+  def index
+  end
+
   def create
     @comment = @post.comments.build(comment_params)
     @comment.user_id = current_user.id
@@ -17,18 +21,19 @@ class CommentsController < ApplicationController
   def edit
     @post = Post.find(params[:post_id])
     @comment = @post.comments.find(params[:id])
+
   end
 
   def update
     @post = Post.find(params[:post_id])
     @comment = @post.comments.find(params[:id])
-    if Time.now - @comment.created_at > 1.minutes
-      flash[:alert] = "Too late to edit"
+    if Time.now - @comment.created_at > 10.minutes
+      flash[:notice] = "Too late to edit"
     else
       @comment.update(comment_params)
       flash[:success] = "Comment updated"
+      redirect_to root_path
     end
-    redirect_to root_path
   end
 
   def destroy
