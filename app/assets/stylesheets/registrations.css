@@ -9,9 +9,9 @@ html, body {
   align-items: center;
   justify-content: center; */
   /* min-height: 100vh; */
-  background-image: url('https://source.unsplash.com/1600x900/?facebook');
-  /* background-position: center center;
- 	background-size: cover; */
+  background: url('/assets/images/acebook.jpg');
+  /* background-position: center center; */
+ 	background-size: cover;
  }
 
 .container {

@@ -10,11 +10,17 @@ h2{
 
   text-align: center;
   padding: 30px;
+  color: #FFFFFF;
 }
 .login-form-container{
   display: flex;
   justify-content: center;
-
+  .email, .password{
+    color: #FFFFFF;
+  }
+  .user_remember_me{
+    color: #FFFFFF;
+  }
 }
 
 .Login-submit{
