@@ -74,4 +74,4 @@ feature 'Users can comment on a post' do
     click_button "Update"
     expect(page).to have_content("edited")
   end
-end
+end 
