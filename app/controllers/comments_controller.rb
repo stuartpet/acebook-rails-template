@@ -7,10 +7,10 @@ class CommentsController < ApplicationController
 
     if @comment.save
       flash[:success] = "Comment added"
-      redirect_back(fallback_location: root_path)
+      redirect_back(fallback_location: posts_path)
     else
       flash[:alert] = "Something went wrong!"
-      render root_path
+      render posts_path
     end
   end
 
@@ -24,7 +24,7 @@ class CommentsController < ApplicationController
     @comment = @post.comments.find(params[:id])
     @comment.update(comment_params)
     flash[:success] = "Comment updated"
-    redirect_to root_path
+    redirect_to  posts_path
   end
 
   def destroy
@@ -32,7 +32,7 @@ class CommentsController < ApplicationController
 
     @comment.destroy
     flash[:success] = "Comment deleted"
-    redirect_to root_path
+    redirect_to  posts_path
   end
 
   private
